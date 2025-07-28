@@ -1,16 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./pages/Main";
-import Create from "./pages/Create";
-import Detail from "./pages/Detail";
+import MainPage from "./pages/MainPage";
+import CreatePage from "./pages/CreatePage";
+import DetailPage from "./pages/DetailPage";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<MainPage />} />
 
-        <Route path="/create" element={<Create />} />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/create" element={<CreatePage />} />
+        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/update/:id" element={<></>} />
 
         <Route path="*" element={<>404 Not Found</>} />
       </Routes>

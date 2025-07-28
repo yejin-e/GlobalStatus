@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { PostContext } from "../contexts/post";
 import MainButton from "../components/MainButton";
 import MoveButton from "../components/MoveButton";
+import CreatePage from "./CreatePage";
 
 
 const DetailPage = () => {
@@ -22,6 +23,7 @@ const DetailPage = () => {
       <div>
         content: {posts[numberId].content}
       </div>
+      <CreatePage />
     </div>
   )
 }

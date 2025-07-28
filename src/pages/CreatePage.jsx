@@ -3,7 +3,7 @@ import { PostContext } from "../contexts/post";
 import { Navigate } from "react-router-dom";
 
 const CreatePage = () => {
-  const { setPosts } = useContext(PostContext);
+  const { posts, setPosts } = useContext(PostContext);
 
   const handleCick = () => {
     setPosts((prev) => [

@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostContext } from "../contexts/post";
+import MainButton from "../components/MainButton";
+import MoveButton from "../components/MoveButton";
+
 
 const DetailPage = () => {
   const navigate = useNavigate();
@@ -10,7 +13,9 @@ const DetailPage = () => {
 
   return (
     <div>
-
+      <MainButton />
+      <MoveButton numberId={numberId - 1} />
+      <MoveButton numberId={numberId + 1} />
       <div>
         title: {posts[numberId].title}
       </div>

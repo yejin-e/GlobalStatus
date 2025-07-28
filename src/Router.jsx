@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./pages/main";
-import Create from "./pages/create";
-import Detail from "./pages/detail";
+import Main from "./pages/Main";
+import Create from "./pages/Create";
+import Detail from "./pages/Detail";
 
 const Router = () => {
   return (

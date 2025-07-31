@@ -10,7 +10,9 @@ const MoveButton = ({ numberId, left }) => {
       onClick={() => {
         navigate(`/detail/${numberId}`);
       }}
-      className={left ? "rotate-180" : ""}
+      className={`${
+        left ? "rotate-180" : ""
+      } rounded-4xl shadow-lg hover:translate-x-3 transition duration-300`}
     >
       <Direction />
     </div>

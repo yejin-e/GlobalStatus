@@ -31,13 +31,13 @@ const CreatePage = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col h-screen">
       <ButtonModule />
       <div className="p-10 text-center text-5xl"> 글 생성 </div>
       <form
         method="post"
         onSubmit={handleCreateCick}
-        className="w-4/5 m-auto border-gray-300"
+        className="w-4/5 m-auto flex-auto h-full border-gray-300"
       >
         <input
           name="title"
@@ -47,9 +47,9 @@ const CreatePage = () => {
         <textarea
           name="content"
           placeholder="글 내용"
-          className="border w-full h-100 p-5 border-gray-300 outline-none"
+          className="border w-full h-4/5 p-5 border-gray-300 outline-none"
         />
-        <button type="submit">
+        <button type="submit" className="w-full h-20 p-2 flex justify-end">
           <Create />
         </button>
       </form>

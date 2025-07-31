@@ -9,12 +9,11 @@ import UpdateButton from "./UpdateButton";
 
 const ButtonModule = ({ numberId }) => {
   const { posts } = useContext(PostContext);
-  const location = useLocation();
-  const url = location.pathname;
+  const { pathname } = useLocation();
 
   return (
     <div className="flex flex-col fixed top-10 right-5 gap-2 bg-gray-200 py-5 px-2 rounded-4xl border border-gray-300 hover:shadow-lg hover:-translate-y-2 transition duration-300">
-      {url != "/" ? <MainButton /> : <></>}
+      {pathname != "/" ? <MainButton /> : <></>}
       {numberId > 0 ? (
         <MoveButton numberId={numberId - 1} left={true} />
       ) : (
@@ -25,8 +24,8 @@ const ButtonModule = ({ numberId }) => {
       ) : (
         <></>
       )}
-      {url === "/" ? <CreateButton /> : <></>}
-      {url === `/detail/${numberId}` ? (
+      {pathname === "/" ? <CreateButton /> : <></>}
+      {pathname === `/detail/${numberId}` ? (
         <>
           <UpdateButton numberId={numberId} />
           <DeleteButton numberId={numberId} />

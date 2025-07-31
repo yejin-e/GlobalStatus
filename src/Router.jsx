@@ -3,10 +3,12 @@ import MainPage from "./pages/MainPage";
 import CreatePage from "./pages/CreatePage";
 import DetailPage from "./pages/DetailPage";
 import UpdatePage from "./pages/UpdatePage";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainPage />} />
 

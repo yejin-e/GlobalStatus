@@ -3,7 +3,9 @@ import { PostContext } from "../contexts/post";
 import Delete from "../icons/Delete";
 import { useNavigate } from "react-router-dom";
 
-const DeleteButton = (deleteIndex) => {
+const DeleteButton = ({ deleteIndex }) => {
+  console.log(deleteIndex);
+
   const navigate = useNavigate();
   const { posts, setPosts } = useContext(PostContext);
 

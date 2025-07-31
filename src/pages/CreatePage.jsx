@@ -6,18 +6,15 @@ const CreatePage = () => {
   const { posts, setPosts } = useContext(PostContext);
 
   const handleCick = () => {
-    setPosts((prev) => [
-      ...prev,
-      { title: "추가 제목", content: "추가 내용" }
-    ]);
+    setPosts((prev) => [{ title: "추가 제목", content: "추가 내용" }, ...prev]);
     Navigate("/");
-  }
+  };
 
   return (
     <div>
       <button onClick={handleCick}>create</button>
     </div>
-  )
-}
+  );
+};
 
 export default CreatePage;

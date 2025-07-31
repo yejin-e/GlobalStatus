@@ -5,7 +5,6 @@ import MainButton from "../components/MainButton";
 import MoveButton from "../components/MoveButton";
 import CreatePage from "./CreatePage";
 
-
 const DetailPage = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // param 안의 숫자는 항상 문자열 형식
@@ -14,18 +13,18 @@ const DetailPage = () => {
 
   return (
     <div>
-      <MainButton />
-      <MoveButton numberId={numberId - 1} />
-      <MoveButton numberId={numberId + 1} />
       <div>
-        title: {posts[numberId].title}
+        <MainButton />
+        <MoveButton numberId={numberId - 1} />
+        <MoveButton numberId={numberId + 1} />
       </div>
-      <div>
-        content: {posts[numberId].content}
+      <div className="border w-9/10 m-auto p-4">
+        <div>title: {posts[numberId].title}</div>
+        <div>content: {posts[numberId].content}</div>
       </div>
       <CreatePage />
     </div>
-  )
-}
+  );
+};
 
 export default DetailPage;

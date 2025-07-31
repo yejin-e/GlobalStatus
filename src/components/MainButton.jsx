@@ -4,10 +4,13 @@ const MainButton = () => {
   const navigate = useNavigate();
 
   return (
-    <button onClick={() => {
-      navigate(`/`);
-    }} />
-  )
-}
+    <button
+      className="w-3 aspect-square bg-lime-900"
+      onClick={() => {
+        navigate(`/`);
+      }}
+    />
+  );
+};
 
 export default MainButton;

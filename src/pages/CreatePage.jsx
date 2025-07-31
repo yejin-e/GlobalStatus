@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { PostContext } from "../contexts/post";
 import Create from "../icons/Create";
 import { useNavigate } from "react-router-dom";
+import List from "../icons/List";
+import ButtonModule from "../components/ButtonModule";
 
 const CreatePage = () => {
   const navigate = useNavigate();
@@ -31,11 +33,12 @@ const CreatePage = () => {
 
   return (
     <div>
+      <ButtonModule />
       <div className="p-10 text-center text-5xl"> 글 생성 </div>
       <form
         method="post"
         onSubmit={handleCreateCick}
-        className="border w-4/5 m-auto border-gray-300"
+        className="w-4/5 m-auto border-gray-300"
       >
         <input
           name="title"
@@ -47,7 +50,7 @@ const CreatePage = () => {
           placeholder="글 내용"
           className="border w-full h-100 p-5 border-gray-300 outline-none"
         />
-        <button type="submit" className="">
+        <button type="submit">
           <Create />
         </button>
       </form>

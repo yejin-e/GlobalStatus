@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PostContext } from "../contexts/post";
-import { Link, useNavigate } from "react-router-dom";
-import Create from "../icons/Create";
+import { useNavigate } from "react-router-dom";
+import ButtonModule from "../components/ButtonModule";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -10,9 +10,7 @@ const MainPage = () => {
 
   return (
     <div>
-      <Link className="fixed bottom-5 right-5" to={"/create"}>
-        <Create />
-      </Link>
+      <ButtonModule />
       <div className="p-10 text-center text-5xl">게시판</div>
       {posts.map((post, index) => (
         <div

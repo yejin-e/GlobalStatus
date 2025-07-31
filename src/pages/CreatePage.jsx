@@ -1,18 +1,22 @@
 import { useContext } from "react";
 import { PostContext } from "../contexts/post";
-import { Navigate } from "react-router-dom";
+import Create from "../icons/Create";
+import { useNavigate } from "react-router-dom";
 
 const CreatePage = () => {
+  const navigate = useNavigate();
   const { posts, setPosts } = useContext(PostContext);
 
-  const handleCick = () => {
+  const handleCreateCick = () => {
     setPosts((prev) => [{ title: "추가 제목", content: "추가 내용" }, ...prev]);
-    Navigate("/");
+    navigate("/");
   };
 
   return (
     <div>
-      <button onClick={handleCick}>create</button>
+      <button onClick={handleCreateCick}>
+        <Create />
+      </button>
     </div>
   );
 };

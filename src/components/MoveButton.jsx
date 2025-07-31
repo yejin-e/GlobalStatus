@@ -1,15 +1,19 @@
 import { useNavigate } from "react-router-dom";
+import Direction from "../icons/Direction";
 
-const MoveButton = ({ numberId }) => {
+const MoveButton = ({ numberId, left }) => {
   const navigate = useNavigate();
 
   return (
-    <button
-      className="w-3 aspect-square bg-lime-500"
+    <div
+      type="button"
       onClick={() => {
         navigate(`/detail/${numberId}`);
       }}
-    />
+      className={left ? "rotate-180" : ""}
+    >
+      <Direction />
+    </div>
   );
 };
 

@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router-dom";
+import List from "../icons/List";
 
 const MainButton = () => {
   const navigate = useNavigate();
 
   return (
     <button
-      className="w-3 aspect-square bg-lime-900"
       onClick={() => {
         navigate(`/`);
       }}
-    />
+    >
+      <List />
+    </button>
   );
 };
 

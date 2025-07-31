@@ -3,8 +3,8 @@ import { PostContext } from "../contexts/post";
 import Delete from "../icons/Delete";
 import { useNavigate } from "react-router-dom";
 
-const DeleteButton = ({ deleteIndex }) => {
-  console.log(deleteIndex);
+const DeleteButton = ({ numberId }) => {
+  console.log(numberId);
 
   const navigate = useNavigate();
   const { posts, setPosts } = useContext(PostContext);
@@ -19,7 +19,7 @@ const DeleteButton = ({ deleteIndex }) => {
   return (
     <button
       onClick={() => {
-        handleDeleteCick(deleteIndex);
+        handleDeleteCick(numberId);
       }}
     >
       <Delete />

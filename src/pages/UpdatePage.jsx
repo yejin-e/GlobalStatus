@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { PostContext } from "../contexts/post";
 import Create from "../icons/Create";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ButtonModule from "../components/ButtonModule";
 
-const CreatePage = () => {
+const UpdatePage = () => {
+  const { id } = useParams(); // param 안의 숫자는 항상 문자열 형식
+  const numberId = Number(id);
+
   const navigate = useNavigate();
   const { posts, setPosts } = useContext(PostContext);
 
@@ -23,17 +26,19 @@ const CreatePage = () => {
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson.title);
 
-    setPosts((prev) => [
-      { title: formJson.title, content: formJson.content },
-      ...prev,
-    ]);
+    let copyPosts = [...posts];
+    copyPosts.splice(numberId, 1, {
+      title: formJson.title,
+      content: formJson.content,
+    });
+    setPosts(copyPosts);
     navigate("/");
   };
 
   return (
     <div>
       <ButtonModule />
-      <div className="p-10 text-center text-5xl"> 글 생성 </div>
+      <div className="p-10 text-center text-5xl"> 글 수정 </div>
       <form
         method="post"
         onSubmit={handleCreateCick}
@@ -42,11 +47,13 @@ const CreatePage = () => {
         <input
           name="title"
           placeholder="글 제목"
+          defaultValue={posts[numberId].title}
           className="border w-full p-5 border-gray-300 outline-none"
         />
         <textarea
           name="content"
           placeholder="글 내용"
+          defaultValue={posts[numberId].content}
           className="border w-full h-100 p-5 border-gray-300 outline-none"
         />
         <button type="submit">
@@ -57,4 +64,4 @@ const CreatePage = () => {
   );
 };
 
-export default CreatePage;
+export default UpdatePage;

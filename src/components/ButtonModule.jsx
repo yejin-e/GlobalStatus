@@ -27,7 +27,7 @@ const ButtonModule = ({ numberId }) => {
       {url != "/create" ? <CreateButton /> : <></>}
       {/* <UpdatePage /> */}
       {url === `/detail/${numberId}` ? (
-        <DeleteButton deleteIndex={numberId} />
+        <DeleteButton numberId={numberId} />
       ) : (
         <></>
       )}

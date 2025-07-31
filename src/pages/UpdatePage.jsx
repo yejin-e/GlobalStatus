@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { PostContext } from "../contexts/post";
-import Create from "../icons/Create";
 import { useNavigate, useParams } from "react-router-dom";
 import ButtonModule from "../components/ButtonModule";
+import Pencil from "../icons/Pencil";
 
 const UpdatePage = () => {
   const { id } = useParams(); // param 안의 숫자는 항상 문자열 형식
@@ -32,32 +32,32 @@ const UpdatePage = () => {
       content: formJson.content,
     });
     setPosts(copyPosts);
-    navigate("/");
+    navigate(`/detail/${numberId}`);
   };
 
   return (
-    <div>
+    <div className="flex flex-col h-screen">
       <ButtonModule />
-      <div className="p-10 text-center text-5xl"> 글 수정 </div>
+      <div className="p-10 h-30 text-center text-5xl"> 글 수정 </div>
       <form
         method="post"
         onSubmit={handleCreateCick}
-        className="w-4/5 m-auto border-gray-300"
+        className="w-4/5 flex-auto h-full mx-auto border-gray-300"
       >
         <input
           name="title"
           placeholder="글 제목"
           defaultValue={posts[numberId].title}
-          className="border w-full p-5 border-gray-300 outline-none"
+          className="border h-15 w-full p-5 border-gray-300 outline-none"
         />
         <textarea
           name="content"
           placeholder="글 내용"
           defaultValue={posts[numberId].content}
-          className="border w-full h-100 p-5 border-gray-300 outline-none"
+          className="border w-full p-5 h-4/5 border-gray-300 outline-none"
         />
-        <button type="submit">
-          <Create />
+        <button type="submit" className="w-full h-20 p-2 flex justify-end">
+          <Pencil />
         </button>
       </form>
     </div>

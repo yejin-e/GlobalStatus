@@ -11,38 +11,39 @@ const Pencil = () => {
       <Circle />
 
       <rect
-        x="40"
-        y="56"
-        width="50"
+        x="28"
+        y="42"
+        width="40"
         height="10"
         fill="black"
-        transform="rotate(25 40 60)"
+        transform="rotate(65 40 60)"
+        rx="1"
+        ry="1"
+      />
+      <rect
+        x="28"
+        y="30"
+        width="40"
+        height="10"
+        fill="black"
+        transform="rotate(65 40 60)"
         rx="1"
         ry="1"
       />
       <polygon
-        points="90,52 100,60 90,68"
+        points="82,48 100,60 82,70"
         fill="black"
-        transform="rotate(25 60 60)"
+        transform="rotate(65 60 60)"
       />
       <rect
-        x="34"
-        y="54"
+        x="15"
+        y="28"
         width="10"
-        height="12"
+        height="25"
         fill="black"
-        transform="rotate(25 40 60)"
+        transform="rotate(65 40 60)"
         rx="1"
         ry="1"
-      />
-      <line
-        x1="40"
-        y1="61"
-        x2="88"
-        y2="61"
-        stroke="black"
-        stroke-width="2"
-        transform="rotate(25 40 60)"
       />
     </svg>
   );

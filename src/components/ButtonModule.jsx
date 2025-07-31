@@ -5,6 +5,7 @@ import MainButton from "./MainButton";
 import { useLocation } from "react-router-dom";
 import { PostContext } from "../contexts/post";
 import { useContext } from "react";
+import UpdateButton from "./UpdateButton";
 
 const ButtonModule = ({ numberId }) => {
   const { posts } = useContext(PostContext);
@@ -12,7 +13,7 @@ const ButtonModule = ({ numberId }) => {
   const url = location.pathname;
 
   return (
-    <div className="flex flex-col fixed top-10 right-5 gap-2 bg-lime-200 py-5 px-2 rounded-4xl">
+    <div className="flex flex-col fixed top-10 right-5 gap-2 bg-gray-200 py-5 px-2 rounded-4xl border border-gray-300 hover:shadow-lg hover:-translate-y-2 transition duration-300">
       {url != "/" ? <MainButton /> : <></>}
       {numberId > 0 ? (
         <MoveButton numberId={numberId - 1} left={true} />
@@ -24,10 +25,12 @@ const ButtonModule = ({ numberId }) => {
       ) : (
         <></>
       )}
-      {url != "/create" ? <CreateButton /> : <></>}
-      {/* <UpdatePage /> */}
+      {url === "/" ? <CreateButton /> : <></>}
       {url === `/detail/${numberId}` ? (
-        <DeleteButton numberId={numberId} />
+        <>
+          <UpdateButton numberId={numberId} />
+          <DeleteButton numberId={numberId} />
+        </>
       ) : (
         <></>
       )}

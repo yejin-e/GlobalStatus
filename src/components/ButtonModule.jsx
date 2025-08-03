@@ -12,30 +12,52 @@ const ButtonModule = ({ numberId }) => {
   const { posts } = useContext(PostContext);
   const { pathname } = useLocation();
 
+  let visible = {
+    mainV: "",
+    leftMoveV: "invisible",
+    rightMoveV: "invisible",
+    createV: "invisible",
+    updateV: "invisible",
+    deleteV: "invisible",
+  };
+
+  if (pathname === "/") {
+    visible.mainV = "invisible";
+    visible.createV = "";
+  } else if (pathname === `/detail/${numberId}`) {
+    visible.leftMoveV = "";
+    visible.rightMoveV = "";
+    visible.updateV = "";
+    visible.deleteV = "";
+    if (numberId === 0) {
+      visible.leftMoveV = "invisible";
+    } else if (numberId === posts.length - 1) {
+      visible.rightMoveV = "invisible";
+    }
+  }
+
   return (
-    <div className="bookmark z-10">
+    <div className="bookmark z-10 h-150">
       <Bookmark />
-      <div className="bookmark flex-c gap-2 py-15 px-2">
-        {pathname != "/" ? <MainButton /> : <></>}
-        {numberId > 0 ? (
-          <MoveButton numberId={numberId - 1} left={true} />
-        ) : (
-          <></>
-        )}
-        {numberId < posts.length - 1 ? (
-          <MoveButton numberId={numberId + 1} left={false} />
-        ) : (
-          <></>
-        )}
-        {pathname === "/" ? <CreateButton /> : <></>}
-        {pathname === `/detail/${numberId}` ? (
-          <>
-            <UpdateButton numberId={numberId} />
-            <DeleteButton numberId={numberId} />
-          </>
-        ) : (
-          <></>
-        )}
+      <div className="bookmark flex-c gap-2 py-10 items-center">
+        <div className={`button-css ${visible.mainV}`}>
+          <MainButton />
+        </div>
+        <div className={`button-css ${visible.leftMoveV}`}>
+          <MoveButton numberId={numberId - 1} pre={true} />
+        </div>
+        <div className={`button-css ${visible.rightMoveV}`}>
+          <MoveButton numberId={numberId + 1} pre={false} />
+        </div>
+        <div className={`button-css ${visible.createV}`}>
+          <CreateButton />
+        </div>
+        <div className={`button-css ${visible.updateV}`}>
+          <UpdateButton numberId={numberId} />
+        </div>
+        <div className={`button-css ${visible.deleteV}`}>
+          <DeleteButton numberId={numberId} />
+        </div>
       </div>
     </div>
   );

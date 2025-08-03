@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/* body {
-  @apply m-0 p-0 h-screen;
-} */
-
 #root {
   @apply min-h-screen bg-[#FEFAE0];
 }
@@ -17,7 +13,11 @@
 }
 
 .bookmark {
-  @apply fixed top-0 right-5;
+  @apply fixed top-0 right-10 w-15;
+}
+
+.button-css {
+  @apply rounded-4xl shadow-lg h-12.5 hover:translate-x-3 transition duration-300; 
 }
 
 .type {

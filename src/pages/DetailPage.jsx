@@ -9,13 +9,16 @@ const DetailPage = () => {
   const { posts } = useContext(PostContext);
 
   return (
-    <div className="article-outside">
-      <div className="article">
-        <div className="article-title">{posts[numberId].title}</div>
-        <div className="article-content">{posts[numberId].content}</div>
-      </div>
-      <div className="w-10">
-        <ButtonModule numberId={numberId} />
+    <div className="flex-c">
+      <div className="type"> {posts.length - `${numberId}`}번째 글 </div>
+      <div className="article-outside">
+        <div className="article">
+          <div className="article-title">{posts[numberId].title}</div>
+          <div className="article-content">{posts[numberId].content}</div>
+        </div>
+        <div className="w-10">
+          <ButtonModule numberId={numberId} />
+        </div>
       </div>
     </div>
   );

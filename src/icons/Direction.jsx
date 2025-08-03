@@ -15,11 +15,11 @@ const Direction = () => {
         y1="60"
         x2="75"
         y2="60"
-        stroke="black"
+        stroke="#0A400C"
         stroke-width="10"
         stroke-linecap="round"
       />
-      <polygon points="75,42 95,60 75,78" fill="black" />
+      <polygon points="75,42 95,60 75,78" fill="#0A400C" />
     </svg>
   );
 };

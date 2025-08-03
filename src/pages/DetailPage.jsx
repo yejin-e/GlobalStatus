@@ -9,13 +9,13 @@ const DetailPage = () => {
   const { posts } = useContext(PostContext);
 
   return (
-    <div>
-      <ButtonModule numberId={numberId} />
-      <div className="border border-gray-300 w-9/10 mx-auto my-10 p-15">
-        <div className="font-bold text-3xl pb-6 border-b border-b-gray-300">
-          {posts[numberId].title}
-        </div>
-        <div className="text-base/7 pt-6">{posts[numberId].content}</div>
+    <div className="article-outside">
+      <div className="article">
+        <div className="article-title">{posts[numberId].title}</div>
+        <div className="article-content">{posts[numberId].content}</div>
+      </div>
+      <div className="w-10">
+        <ButtonModule numberId={numberId} />
       </div>
     </div>
   );

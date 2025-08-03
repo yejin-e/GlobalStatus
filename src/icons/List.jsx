@@ -10,9 +10,9 @@ const List = () => {
     >
       <Circle />
 
-      <rect x="35" y="40" width="50" height="8" fill="black" rx="4" ry="4" />
-      <rect x="35" y="56" width="50" height="8" fill="black" rx="4" ry="4" />
-      <rect x="35" y="72" width="50" height="8" fill="black" rx="4" ry="4" />
+      <rect x="35" y="40" width="50" height="8" fill="#0A400C" rx="4" ry="4" />
+      <rect x="35" y="56" width="50" height="8" fill="#0A400C" rx="4" ry="4" />
+      <rect x="35" y="72" width="50" height="8" fill="#0A400C" rx="4" ry="4" />
     </svg>
   );
 };

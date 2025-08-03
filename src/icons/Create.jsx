@@ -14,7 +14,7 @@ const Create = () => {
         y1="35"
         x2="60"
         y2="85"
-        stroke="black"
+        stroke="#0A400C"
         stroke-width="8"
         stroke-linecap="round"
       />
@@ -23,7 +23,7 @@ const Create = () => {
         y1="60"
         x2="85"
         y2="60"
-        stroke="black"
+        stroke="#0A400C"
         stroke-width="8"
         stroke-linecap="round"
       />

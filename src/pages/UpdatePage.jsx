@@ -36,30 +36,30 @@ const UpdatePage = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
-      <ButtonModule />
-      <div className="p-10 h-30 text-center text-5xl"> 글 수정 </div>
-      <form
-        method="post"
-        onSubmit={handleCreateCick}
-        className="w-4/5 flex-auto h-full mx-auto border-gray-300"
-      >
-        <input
-          name="title"
-          placeholder="글 제목"
-          defaultValue={posts[numberId].title}
-          className="border h-15 w-full p-5 border-gray-300 outline-none"
-        />
-        <textarea
-          name="content"
-          placeholder="글 내용"
-          defaultValue={posts[numberId].content}
-          className="border w-full p-5 h-4/5 border-gray-300 outline-none"
-        />
-        <button type="submit" className="w-full h-20 p-2 flex justify-end">
-          <Pencil />
-        </button>
-      </form>
+    <div className="flex-c">
+      <div className="type"> 글 수정 </div>
+      <div className="article-outside">
+        <form method="post" onSubmit={handleCreateCick} className="article">
+          <input
+            name="title"
+            placeholder="글 제목"
+            defaultValue={posts[numberId].title}
+            className="article-title w-full outline-none"
+          />
+          <textarea
+            name="content"
+            placeholder="글 내용"
+            defaultValue={posts[numberId].content}
+            className="article-content w-full flex-1 outline-none"
+          />
+          <button type="submit" className="w-full pt-2 flex justify-end">
+            <Pencil />
+          </button>
+        </form>
+        <div className="w-10">
+          <ButtonModule />
+        </div>
+      </div>
     </div>
   );
 };

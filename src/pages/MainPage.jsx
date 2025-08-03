@@ -9,21 +9,23 @@ const MainPage = () => {
   console.log(posts);
 
   return (
-    <div>
-      <ButtonModule />
-      <div className="p-10 text-center text-5xl">게시판</div>
+    <div className="flex-c">
+      <div className="type mb-10">게시판</div>
       {posts.map((post, index) => (
         <div
-          className="border border-gray-300 w-9/10 m-auto p-5"
+          className="border-t border-t-[#819067] w-9/10 m-auto p-5"
           key={index}
           onClick={() => {
             navigate(`/detail/${index}`);
           }}
         >
-          <div className="font-bold">{post.title}</div>
+          <div className="font-black">{post.title}</div>
           <div className="truncate">{post.content}</div>
         </div>
       ))}
+      <div className="w-10">
+        <ButtonModule />
+      </div>
     </div>
   );
 };

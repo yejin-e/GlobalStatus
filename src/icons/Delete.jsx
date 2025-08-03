@@ -15,7 +15,7 @@ const Delete = () => {
         y1="40"
         x2="80"
         y2="80"
-        stroke="black"
+        stroke="#0A400C"
         stroke-width="8"
         stroke-linecap="round"
       />
@@ -24,7 +24,7 @@ const Delete = () => {
         y1="40"
         x2="40"
         y2="80"
-        stroke="black"
+        stroke="#0A400C"
         stroke-width="8"
         stroke-linecap="round"
       />

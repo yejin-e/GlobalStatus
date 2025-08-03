@@ -15,7 +15,7 @@ const Pencil = () => {
         y="42"
         width="40"
         height="10"
-        fill="black"
+        fill="#0A400C"
         transform="rotate(65 40 60)"
         rx="1"
         ry="1"
@@ -25,14 +25,14 @@ const Pencil = () => {
         y="30"
         width="40"
         height="10"
-        fill="black"
+        fill="#0A400C"
         transform="rotate(65 40 60)"
         rx="1"
         ry="1"
       />
       <polygon
         points="82,48 100,60 82,70"
-        fill="black"
+        fill="#0A400C"
         transform="rotate(65 60 60)"
       />
       <rect
@@ -40,7 +40,7 @@ const Pencil = () => {
         y="28"
         width="10"
         height="25"
-        fill="black"
+        fill="#0A400C"
         transform="rotate(65 40 60)"
         rx="1"
         ry="1"

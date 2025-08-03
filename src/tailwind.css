@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+/* body {
+  @apply m-0 p-0 h-screen;
+} */
+
+#root {
+  @apply min-h-screen bg-[#FEFAE0];
+}
+
+* {
+  @apply box-border;
+}
+
+.flex-c {
+  @apply flex flex-col;
+}
+
+.bookmark {
+  @apply fixed top-0 right-5;
+}
+
+.type {
+  @apply mt-10 text-center text-5xl font-black text-[#64704f];
+}
+
+.article-outside {
+  @apply p-10 flex;
+}
+
+.article {
+  @apply border border-[#819067] mx-auto p-15 flex-1
+}
+
+.article-title {
+  @apply font-black text-3xl pb-6 border-b border-b-[#819067];
+}
+
+.article-content {
+  @apply text-base/7 pt-6 min-h-100;
+}

@@ -6,7 +6,8 @@ import ButtonModule from "../components/ButtonModule";
 const MainPage = () => {
   const navigate = useNavigate();
   const { posts } = useContext(PostContext);
-  console.log(posts);
+
+  localStorage.setItem("posts", JSON.stringify(posts));
 
   return (
     <div className="flex-c">

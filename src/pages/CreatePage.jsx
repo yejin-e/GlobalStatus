@@ -8,6 +8,8 @@ const CreatePage = () => {
   const navigate = useNavigate();
   const { posts, setPosts } = useContext(PostContext);
 
+  localStorage.setItem("posts", JSON.stringify(posts));
+
   const handleCreateCick = (e) => {
     // 브라우저가 페이지를 다시 로드하지 못하도록 방지합니다.
     e.preventDefault();

@@ -32,6 +32,10 @@ const UpdatePage = () => {
       content: formJson.content,
     });
     setPosts(copyPosts);
+
+
+    localStorage.setItem("posts", JSON.stringify(copyPosts));
+
     navigate(`/detail/${numberId}`);
   };
 

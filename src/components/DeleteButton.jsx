@@ -13,6 +13,9 @@ const DeleteButton = ({ numberId }) => {
     let copyPosts = [...posts];
     copyPosts.splice(deleteIndex, 1);
     setPosts(copyPosts);
+
+    localStorage.setItem("posts", JSON.stringify(copyPosts));
+
     navigate("/");
   };
 

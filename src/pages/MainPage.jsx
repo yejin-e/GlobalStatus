@@ -7,8 +7,6 @@ const MainPage = () => {
   const navigate = useNavigate();
   const { posts } = useContext(PostContext);
 
-  localStorage.setItem("posts", JSON.stringify(posts));
-
   return (
     <div className="flex-c">
       <div className="type mb-10">게시판</div>

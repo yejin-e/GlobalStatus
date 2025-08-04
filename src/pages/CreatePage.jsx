@@ -8,8 +8,6 @@ const CreatePage = () => {
   const navigate = useNavigate();
   const { posts, setPosts } = useContext(PostContext);
 
-  localStorage.setItem("posts", JSON.stringify(posts));
-
   const handleCreateCick = (e) => {
     // 브라우저가 페이지를 다시 로드하지 못하도록 방지합니다.
     e.preventDefault();
@@ -25,10 +23,19 @@ const CreatePage = () => {
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson.title);
 
+    const newPost = { title: formJson.title, content: formJson.content }
+
     setPosts((prev) => [
-      { title: formJson.title, content: formJson.content },
+      newPost,
       ...prev,
     ]);
+
+
+
+    localStorage.setItem("posts", JSON.stringify([newPost, ...posts]));
+
+
+
     navigate("/detail/0");
   };
 

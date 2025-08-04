@@ -23,10 +23,19 @@ const CreatePage = () => {
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson.title);
 
+    const newPost = { title: formJson.title, content: formJson.content }
+
     setPosts((prev) => [
-      { title: formJson.title, content: formJson.content },
+      newPost,
       ...prev,
     ]);
+
+
+
+    localStorage.setItem("posts", JSON.stringify([newPost, ...posts]));
+
+
+
     navigate("/detail/0");
   };
 

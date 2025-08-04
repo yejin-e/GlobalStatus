@@ -6,7 +6,6 @@ import ButtonModule from "../components/ButtonModule";
 const MainPage = () => {
   const navigate = useNavigate();
   const { posts } = useContext(PostContext);
-  console.log(posts);
 
   return (
     <div className="flex-c">

@@ -1,42 +1,28 @@
-import { useContext } from "react";
-import { PostContext } from "../contexts/post";
 import Create from "../icons/Create";
 import { useNavigate } from "react-router-dom";
 import ButtonModule from "../components/ButtonModule";
+import axios from "axios";
 
 const CreatePage = () => {
   const navigate = useNavigate();
-  const { posts, setPosts } = useContext(PostContext);
 
-  const handleCreateCick = (e) => {
-    // 브라우저가 페이지를 다시 로드하지 못하도록 방지합니다.
+  const handleCreateCick = async (e) => {
     e.preventDefault();
 
-    // 폼 데이터를 읽습니다.
     const form = e.target;
     const formData = new FormData(form);
-
-    // You can pass formData as a fetch body directly:
     fetch("/some-api", { method: form.method, body: formData });
-
-    // Or you can work with it as a plain object:
     const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson.title);
 
-    const newPost = { title: formJson.title, content: formJson.content }
+    const data = {
+      "title": formJson.title,
+      "content": formJson.content,
+    };
 
-    setPosts((prev) => [
-      newPost,
-      ...prev,
-    ]);
-
+    await axios.post('https://dod.study.mqueue.dev/api/v1/board/', data);
 
 
-    localStorage.setItem("posts", JSON.stringify([newPost, ...posts]));
-
-
-
-    navigate("/detail/0");
+    navigate("/");
   };
 
   return (

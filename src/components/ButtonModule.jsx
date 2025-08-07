@@ -3,13 +3,10 @@ import MoveButton from "./MoveButton";
 import DeleteButton from "./DeleteButton";
 import MainButton from "./MainButton";
 import { useLocation } from "react-router-dom";
-import { PostContext } from "../contexts/post";
-import { useContext } from "react";
 import UpdateButton from "./UpdateButton";
 import Bookmark from "../icons/Bookmark";
 
-const ButtonModule = ({ numberId }) => {
-  const { posts } = useContext(PostContext);
+const ButtonModule = ({ id }) => {
   const { pathname } = useLocation();
 
   let visible = {
@@ -24,16 +21,16 @@ const ButtonModule = ({ numberId }) => {
   if (pathname === "/") {
     visible.mainV = "invisible";
     visible.createV = "";
-  } else if (pathname === `/detail/${numberId}`) {
+  } else if (pathname === `/detail/${id}`) {
     visible.leftMoveV = "";
     visible.rightMoveV = "";
     visible.updateV = "";
     visible.deleteV = "";
-    if (numberId === 0) {
-      visible.leftMoveV = "invisible";
-    } else if (numberId === posts.length - 1) {
-      visible.rightMoveV = "invisible";
-    }
+    // if (id === 0) {
+    //   visible.leftMoveV = "invisible";
+    // } else if (id === posts.length - 1) {
+    //   visible.rightMoveV = "invisible";
+    // }
   }
 
   return (
@@ -44,19 +41,19 @@ const ButtonModule = ({ numberId }) => {
           <MainButton />
         </div>
         <div className={`button-css ${visible.leftMoveV}`}>
-          <MoveButton numberId={numberId - 1} pre={true} />
+          <MoveButton id={id - 1} pre={true} />
         </div>
         <div className={`button-css ${visible.rightMoveV}`}>
-          <MoveButton numberId={numberId + 1} pre={false} />
+          <MoveButton id={id + 1} pre={false} />
         </div>
         <div className={`button-css ${visible.createV}`}>
           <CreateButton />
         </div>
         <div className={`button-css ${visible.updateV}`}>
-          <UpdateButton numberId={numberId} />
+          <UpdateButton id={id} />
         </div>
         <div className={`button-css ${visible.deleteV}`}>
-          <DeleteButton numberId={numberId} />
+          <DeleteButton id={id} />
         </div>
       </div>
     </div>

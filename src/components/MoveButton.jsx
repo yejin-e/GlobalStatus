@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Direction from "../icons/Direction";
 
-const MoveButton = ({ numberId, pre }) => {
+const MoveButton = ({ id, pre }) => {
   const navigate = useNavigate();
 
   const rotate = pre ? "rotate-180" : "";
@@ -11,7 +11,7 @@ const MoveButton = ({ numberId, pre }) => {
       <div
         type="button"
         onClick={() => {
-          navigate(`/detail/${numberId}`);
+          navigate(`/detail/${id}`);
         }}
         className={`mt-2" ${rotate}`}
       >

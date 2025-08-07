@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import Pencil from "../icons/Pencil";
 
-const UpdateButton = ({ numberId }) => {
+const UpdateButton = ({ id }) => {
   const navigate = useNavigate();
 
   return (
     <button
       onClick={() => {
-        navigate(`/update/${numberId}`);
+        navigate(`/update/${id}`);
       }}
     >
       <Pencil />

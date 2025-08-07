@@ -1,28 +1,19 @@
-import { useContext } from "react";
-import { PostContext } from "../contexts/post";
 import Delete from "../icons/Delete";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const DeleteButton = ({ numberId }) => {
-  console.log(numberId);
-
+const DeleteButton = ({ id }) => {
   const navigate = useNavigate();
-  const { posts, setPosts } = useContext(PostContext);
 
-  const handleDeleteCick = (deleteIndex) => {
-    let copyPosts = [...posts];
-    copyPosts.splice(deleteIndex, 1);
-    setPosts(copyPosts);
-
-    localStorage.setItem("posts", JSON.stringify(copyPosts));
-
+  const handleDeleteCick = async () => {
+    await axios.delete(`https://dod.study.mqueue.dev/api/v1/board/${id}`)
     navigate("/");
   };
 
   return (
     <button
       onClick={() => {
-        handleDeleteCick(numberId);
+        handleDeleteCick(id);
       }}
     >
       <Delete />

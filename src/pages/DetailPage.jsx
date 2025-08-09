@@ -11,28 +11,29 @@ const DetailPage = () => {
 
   useEffect(() => {
     detailApi();
-  }, []);
+  }, [id]);
 
   const detailApi = async () => {
     try {
-      const res = await axios.get(`https://dod.study.mqueue.dev/api/v1/board/${id}`);
-      const detailApi = res.data;
-      console.log(detailApi);
+      const res = await axios.get(
+        `https://dod.study.mqueue.dev/api/v1/board/${id}`
+      );
+      const data = res.data;
+      console.log(data);
 
-      setPost(detailApi);
+      setPost(data);
       setIsLoading(false);
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error);
-      alert('잘못된 접근입니다.');
-      navigate('/');
+      alert("잘못된 접근입니다.");
+      navigate("/");
     }
-  }
+  };
 
-  if (isLoading) return <>loading</>
+  if (isLoading) return <>loading</>;
 
   return (
-    <div div className="flex-c" >
+    <div div className="flex-c">
       <div className="type"> {id}번째 글 </div>
       <div className="article-outside">
         <div className="article">
@@ -43,7 +44,7 @@ const DetailPage = () => {
           <ButtonModule id={post.id} />
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 

@@ -41,10 +41,10 @@ const ButtonModule = ({ id }) => {
           <MainButton />
         </div>
         <div className={`button-css ${visible.leftMoveV}`}>
-          <MoveButton id={id - 1} pre={true} />
+          <MoveButton id={id} pre={true} />
         </div>
         <div className={`button-css ${visible.rightMoveV}`}>
-          <MoveButton id={id + 1} pre={false} />
+          <MoveButton id={id} pre={false} />
         </div>
         <div className={`button-css ${visible.createV}`}>
           <CreateButton />

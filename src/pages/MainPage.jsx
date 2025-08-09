@@ -15,9 +15,9 @@ const MainPage = () => {
     const res = await axios.get("https://dod.study.mqueue.dev/api/v1/board");
     console.log(res);
 
-    const apiPosts = res.data.posts;
-    setPosts(apiPosts);
-  }
+    const data = res.data.posts;
+    setPosts(data);
+  };
 
   console.log(posts);
 

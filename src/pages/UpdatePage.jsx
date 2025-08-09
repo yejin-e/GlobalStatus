@@ -16,11 +16,13 @@ const UpdatePage = () => {
   }, []);
 
   const detailApi = async () => {
-    const res = await axios.get(`https://dod.study.mqueue.dev/api/v1/board/${id}`);
+    const res = await axios.get(
+      `https://dod.study.mqueue.dev/api/v1/board/${id}`
+    );
     setTitle(res.data.title);
     setContent(res.data.content);
     console.log(title, content);
-  }
+  };
 
   const handleCreateCick = async (e) => {
     e.preventDefault();
@@ -31,8 +33,8 @@ const UpdatePage = () => {
     const formJson = Object.fromEntries(formData.entries());
 
     const data = {
-      "title": formJson.title,
-      "content": formJson.content,
+      title: formJson.title,
+      content: formJson.content,
     };
     await axios.patch(`https://dod.study.mqueue.dev/api/v1/board/${id}`, data);
 
